@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-# YOUR CODE HERE
 number = str(number)
 if number[-1] > '5':
     if number < '0':
@@ -18,4 +17,3 @@ else:
         print(f"Last digit of {number} is -{number[-1]} and is less than 6 and not 0")
     else:
         print(f"Last digit of {number} is {number[-1]} and is less than 6 and not 0")
-
