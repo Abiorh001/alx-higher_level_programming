@@ -18,6 +18,10 @@ class Square():
     def size(self, value):
         '''A setter is created to set the value of size'''
         self.__size = value
+        if type(value) != int:
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
 
     def size(self):
         '''A getter is created to get value of size'''
