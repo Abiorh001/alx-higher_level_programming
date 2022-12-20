@@ -15,10 +15,10 @@ class Square():
         '''An instance is created to get the square of size'''
         return self.__size * self.__size
 
-    def size(self):
-        '''A getter is created'''
-        return self.__size
-
     def size(self, value):
         '''A setter is created to set the value of size'''
         self.__size = value
+
+    def size(self):
+        '''A getter is created to get value of size'''
+        return self.__size
