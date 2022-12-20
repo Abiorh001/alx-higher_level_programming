@@ -5,7 +5,7 @@
 class Square():
     '''A class is created which have a size of 0'''
     def __init__(self, size=0):
-        if size != int:
+        if type(size) != int:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
