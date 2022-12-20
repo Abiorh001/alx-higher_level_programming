@@ -30,8 +30,8 @@ class Square():
 
     def my_print(self):
         '''This instance is use to display # according to the size given'''
-        if size == 0:
-            print()
-        else:
+        if self.__size:
             for i in range(self.__size):
                 print("#" * self.__size)
+        else:
+            print()
