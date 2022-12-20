@@ -15,13 +15,18 @@ class Square():
         '''An instance is created to get the square of size'''
         return self.__size * self.__size
 
+    @property
     def size(self):
-        '''A getter is created'''
+        '''A getter is created to get value of size'''
         return self.__size
 
+    @size.setter
     def size(self, value):
         '''A setter is created to set the value of size'''
-        self.__size = value
+        if type(value) != int:
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
 
     def my_print(self):
         '''This instance is use to display # according to the size given'''
