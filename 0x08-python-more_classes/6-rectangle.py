@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-'''CREATING RECTANGLE CLASS'''
+'''creating rectangleclass'''
 
 
 class Rectangle:
+    '''RECTANGLE CLASS'''
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     def __del__(self):
@@ -16,35 +17,39 @@ class Rectangle:
 
     @property
     def width(self):
-        return self.__width
-
-    @width.setter
-    def width(self, value):
-        if type(self.__width) != int:
-            raise TypeError("width must be an integer")
-        if self.__width < 0:
-            raise ValueError("width must be >= 0")
-        self.__width = value
+        '''getter for widght'''
         return self.__width
 
     @property
     def height(self):
+        '''getter for height'''
         return self.__height
+
+    @width.setter
+    def width(self, value):
+        '''setter for width'''
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
 
     @height.setter
     def height(self, value):
-        if type(self.__height) != int:
+        '''setter for height'''
+        if type(value) != int:
             raise TypeError("height must be an integer")
-        if self.__height < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-        return self.__height
 
     def area(self):
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
-        return self.__width * 2 + self.__height * 2
+        if self.width == 0 or self.height == 0:
+            return 0
+        return (self.width + self.height) * 2
 
     def __str__(self):
         """ Return string to print rectangle with # """
@@ -52,9 +57,10 @@ class Rectangle:
             return ''
         to_print = ''
         for col in range(self.height):
-            to_print += '\n'
             for row in range(self.width):
                 to_print += '#'
+            if col != self.height - 1:
+                to_print += '\n'
         return to_print
 
     def __repr__(self):
