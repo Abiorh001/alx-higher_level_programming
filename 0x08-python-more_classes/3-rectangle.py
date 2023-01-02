@@ -51,7 +51,8 @@ class Rectangle:
             return ''
         to_print = ''
         for col in range(self.height):
-            to_print += '\n'
             for row in range(self.width):
                 to_print += '#'
+            if col != self.height - 1:
+                to_print += '\n'
         return to_print
