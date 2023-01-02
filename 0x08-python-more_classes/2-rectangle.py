@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+'''creating rectangleclass'''
+
+
 class Rectangle:
     '''RECTANGLE CLASS'''
 
