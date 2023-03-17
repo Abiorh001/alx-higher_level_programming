@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""script that list states from the database"""
+""" script that list states from the database """
 import MySQldb
 import sys
+
 
 if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost",
