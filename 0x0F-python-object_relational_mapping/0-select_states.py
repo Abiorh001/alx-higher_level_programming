@@ -9,7 +9,7 @@ if __name__ == "__main__":
                              user=sys.argv[1],
                              passwd=sys.argv[2],
                              port=3306, db=sys.argv[3])
-    except MySQL.ERROR:
+    except MySQLdb.Error:
         print("error connecting to database")
     cur = db.cursor()
     try:
@@ -17,7 +17,7 @@ if __name__ == "__main__":
         results = cur.fetchall()
         for result in results:
             print(result)
-    except MySQL.ERROR:
+    except MySQLdb.Error:
         print("error in query the database")
     cur.close()
     db.close()
