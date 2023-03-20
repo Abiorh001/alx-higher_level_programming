@@ -19,4 +19,5 @@ if __name__ == "__main__":
     states = states.all()
     for state in states:
         session.delete(state)
-        session.commit()
+    session.commit()
+    session.close()
